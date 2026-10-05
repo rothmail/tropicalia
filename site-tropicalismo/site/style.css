@@ -151,8 +151,9 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   padding: 7rem 1.5rem 5rem;
-  background: var(--blue);
+  background: var(--ink);
   overflow: hidden;
   border-bottom: 3px solid var(--ink);
 }
@@ -200,7 +201,7 @@ h2 em {
 
 .btn {
   display: inline-block;
-  background: var(--ink);
+  border-style: dotted;
   color: var(--cream);
   padding: .95rem 2.2rem;
   border-radius: 999px;
@@ -208,7 +209,6 @@ h2 em {
   letter-spacing: .08em;
   text-transform: uppercase;
   font-size: .85rem;
-  box-shadow: 5px 5px 0 var(--orange);
   transition: transform .2s, box-shadow .2s;
 }
 
@@ -1357,5 +1357,60 @@ h2 em {
 
     .burst {
       display: none
+    }
+  }
+
+  /* perfis dos artistas */
+  .modal-info {
+    max-height: 90vh;
+    overflow-y: auto
+  }
+
+  .m-meta {
+    display: block;
+    font-size: .8rem;
+    opacity: .65;
+    margin: -.4rem 0 1rem
+  }
+
+  #m-bio p {
+    font-size: .98rem;
+    line-height: 1.65
+  }
+
+  #m-bio p+p {
+    margin-top: .8rem
+  }
+
+  .m-label {
+    margin-top: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--pink)
+  }
+
+  .m-works {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .6rem
+  }
+
+  .m-works li {
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: .2rem .8rem;
+    font-size: .82rem;
+    font-weight: 500;
+    background: #fff
+  }
+
+  @media (max-width:760px) {
+    .modal-info {
+      max-height: none;
+      padding: 1.6rem
     }
   }
