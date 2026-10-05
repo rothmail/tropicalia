@@ -48,6 +48,52 @@ document.querySelectorAll('.tl-btn').forEach(btn => {
   });
 });
 
+// ===== Perfis dos artistas =====
+const PERFIS = {
+  'Caetano Veloso': {
+    meta: 'Santo Amaro (BA) · nascido em 1942',
+    bio: ['Compositor, cantor e um dos principais articuladores do Tropicalismo. Chamou atenção no Festival da Record de 1967 com "Alegria, Alegria", acompanhado por guitarras elétricas, algo que dividiu o público.',
+      'Em 1968, o discurso em "É Proibido Proibir" mostrou o choque entre a nova estética e a plateia. Depois do AI-5, foi preso e, em 1969, partiu para o exílio em Londres, de onde só voltou em 1972.'],
+    obras: ['Alegria, Alegria', 'Tropicália', 'Sampa']
+  },
+  'Gilberto Gil': {
+    meta: 'Salvador (BA) · nascido em 1942',
+    bio: ['Cantor, violonista e compositor que uniu baião, samba, rock e música pop. Com Os Mutantes, levou "Domingo no Parque" ao festival de 1967 e transformou a canção em um dos marcos do movimento.',
+      'Preso em 1968 e exilado em Londres, seguiu produzindo. Décadas depois, foi ministro da Cultura do Brasil, entre 2003 e 2008.'],
+    obras: ['Domingo no Parque', 'Aquele Abraço', 'Expresso 2222']
+  },
+  'Gal Costa': {
+    meta: 'Salvador (BA) · 1945–2022',
+    bio: ['Uma das vozes mais marcantes do grupo. Participou do álbum-manifesto "Tropicália ou Panis et Circencis" e interpretou, no festival de 1968, "Divino, Maravilhoso", de Caetano e Gil.',
+      'Nos primeiros anos da década de 1970, abraçou o visual e o som da contracultura. Sua carreira, de mais de cinco décadas, a tornou uma das grandes intérpretes da música brasileira.'],
+    obras: ['Divino, Maravilhoso', 'Baby', 'Meu Nome é Gal']
+  },
+  'Os Mutantes': {
+    meta: 'São Paulo (SP) · formados em 1966',
+    bio: ['Banda formada por Arnaldo Baptista, Sérgio Dias e Rita Lee. Misturou rock psicodélico, humor, fuzz de guitarra e efeitos feitos em casa, aproximando o Tropicalismo da música pop internacional.',
+      'Acompanharam Gilberto Gil e Caetano Veloso nos festivais e gravaram discos próprios em 1968 e 1970. Rita Lee deixou o grupo em 1972.'],
+    obras: ['Panis et Circenses', 'A Minha Menina', 'Ando Meio Desligado']
+  },
+  'Tom Zé': {
+    meta: 'Irará (BA) · nascido em 1936',
+    bio: ['Compositor e experimentador que transformou ruídos, objetos e a própria linguagem em matéria de canção. Venceu o Festival da Record de 1968 com "São, São Paulo, Meu Amor".',
+      'Teve atuação mais discreta nos anos 1970, mas foi redescoberto internacionalmente na década de 1990 e é visto como um dos nomes mais inventivos da música brasileira.'],
+    obras: ['São, São Paulo, Meu Amor', 'Estudando o Samba', 'Jimmy, Renda-se']
+  },
+  'Torquato Neto': {
+    meta: 'Teresina (PI) · 1944–1972',
+    bio: ['Poeta, letrista e jornalista, foi uma das mentes do movimento. Escreveu letras em parceria com Gilberto Gil, Caetano Veloso e Edu Lobo, e participou do álbum coletivo "Tropicália".',
+      'Em seus textos de jornal e em experimentos de cinema e poesia, defendeu uma arte livre e provocativa. Morreu em 1972, aos 28 anos, e sua obra segue sendo redescoberta.'],
+    obras: ['Geleia Geral', 'Mamãe, Coragem', 'Pra Dizer Adeus']
+  },
+  'Rogério Duprat': {
+    meta: 'Rio de Janeiro (RJ) · 1932–2006',
+    bio: ['Maestro, arranjador e compositor ligado à música de vanguarda. Levou para a música popular orquestrações, ruídos e ideias da música erudita contemporânea.',
+      'Assinou arranjos do álbum "Tropicália ou Panis et Circencis" e de canções como "Domingo no Parque", dando ao movimento parte de sua sonoridade ousada.'],
+    obras: ['Tropicália ou Panis et Circencis', 'Domingo no Parque', 'Os Mutantes (1968)']
+  }
+};
+
 // ===== Modal de artistas =====
 const modal = document.getElementById('modal');
 const mImg = document.getElementById('m-img');
@@ -61,6 +107,10 @@ function openModal(btn) {
   mImg.alt = btn.dataset.nome;
   mNome.textContent = btn.dataset.nome;
   mPapel.innerHTML = btn.dataset.papel;
+  const p = PERFIS[btn.dataset.nome];
+  document.getElementById('m-meta').textContent = p ? p.meta : '';
+  document.getElementById('m-bio').innerHTML = p ? p.bio.map(t => `<p>${t}</p>`).join('') : '';
+  document.getElementById('m-works').innerHTML = p ? p.obras.map(o => `<li>${o}</li>`).join('') : '';
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
