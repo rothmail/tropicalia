@@ -157,43 +157,7 @@ const SHAPES = {
   dot: (c) => dot(c[0])
 };
 
-// t=tipo, s=tamanho(px), x/y=posição (%), c=cores, a=animação, sp=parallax de scroll, d=parallax do mouse
-const DECO = {
-  '#inicio': [
-    { t: 'flower', s: 130, x: 30, y: 70, c: ['#ff2d87', '#fff6e3'], a: 'spin', sp: -.06, d: -35 },
-    { t: 'ring', s: 150, x: 14, y: 14, c: ['#0fa958', '#fff6e3'], a: 'pulse', sp: .05, d: 20 },
-    { t: 'dot', s: 64, x: 54, y: 10, c: ['#42e83c'], a: 'bob', sp: .18, d: 50 },
-    { t: 'flower', s: 90, x: 70, y: 60, c: ['#0fa958', '#fff6e3'], a: 'sway', sp: .08, d: 30 }
-  ],
-  '#tropicalismo': [
-    { t: 'flower', s: 150, x: 92, y: 3, c: ['#ffc81e', '#ff2d87'], a: 'spin', sp: .07 },
-    { t: 'ring', s: 90, x: 94, y: 70, c: ['#1f5fff', '#fff6e3'], a: 'pulse', sp: .06 }
-  ],
-  '#artistas': [
-    { t: 'flower', s: 120, x: -2, y: 55, c: ['#ff2d87', '#ffc81e'], a: 'spin-r', sp: -.06 }
-  ],
-  '#projetos': [
-    { t: 'ring', s: 130, x: -3, y: 6, c: ['#ff2d87', '#ffc81e'], a: 'pulse', sp: .06 },
-    { t: 'flower', s: 140, x: 92, y: 68, c: ['#0fa958', '#ffc81e'], a: 'spin', sp: -.05 },
-    { t: 'dot', s: 50, x: 50, y: 3, c: ['#ff6a1a'], a: 'bob', sp: .1 }
-  ],
-  '#musica': [
-    { t: 'flower', s: 120, x: 93, y: 4, c: ['#7a2cff', '#ffc81e'], a: 'spin-r', sp: .06 }
-  ],
-  '#maquete': [
-    { t: 'flower', s: 100, x: 2, y: 6, c: ['#1f5fff', '#fff6e3'], a: 'sway', sp: -.05 }
-  ],
-  '#moda': [
-    { t: 'ring', s: 120, x: 92, y: 74, c: ['#ffc81e', '#1a1014'], a: 'pulse', sp: -.05 }
-  ],
-  '#cartaz': [
-    { t: 'flower', s: 130, x: 4, y: 86, c: ['#ff2d87', '#ffc81e'], a: 'spin-r', sp: .05 }
-  ],
-  '#grupo': [
-    { t: 'flower', s: 110, x: -2, y: 60, c: ['#ffc81e', '#ff2d87'], a: 'spin', sp: -.05 },
-    { t: 'ring', s: 80, x: 95, y: 88, c: ['#1f5fff', '#fff6e3'], a: 'pulse', sp: .05 }
-  ]
-};
+
 
 const decoItems = [];
 Object.entries(DECO).forEach(([sel, list]) => {
