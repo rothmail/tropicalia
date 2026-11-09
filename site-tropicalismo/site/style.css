@@ -778,7 +778,6 @@ h2 em {
 }
 
 .ph-tall {
-  aspect-ratio: 3/4;
   border-color: var(--yellow);
   color: var(--cream);
 }
