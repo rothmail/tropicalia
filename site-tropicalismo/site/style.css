@@ -773,7 +773,6 @@ h2 em {
 
 /* 05 / 07 / placeholders */
 .ph-wide {
-  aspect-ratio: 21/9;
   min-height: 260px;
 }
 
@@ -1413,3 +1412,4 @@ h2 em {
       padding: 1.6rem
     }
   }
+}
