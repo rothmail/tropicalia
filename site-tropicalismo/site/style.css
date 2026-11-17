@@ -779,6 +779,8 @@ h2 em {
 .ph-tall {
   border-color: var(--yellow);
   color: var(--cream);
+  height: 100%;
+  max-height: 500px;
 }
 
 .poster-grid {
